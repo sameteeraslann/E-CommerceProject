@@ -18,4 +18,11 @@
     <ProjectReference Include="..\CMSProject.Map\CMSProject.Map.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Repositories\Concrete\Base\" />
+    <Folder Include="Repositories\Concrete\EntityTypeRepositories\" />
+    <Folder Include="Repositories\Interfaces\Base\" />
+    <Folder Include="Repositories\Interfaces\EntityTypeRepositories\" />
+  </ItemGroup>
+
 </Project>
