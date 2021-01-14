@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CMSProject.Entity", "CMSPro
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CMSProject.Map", "CMSProject.Map\CMSProject.Map.csproj", "{5AFF2FA4-7173-44F4-9FFF-AAA06DA08C73}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CMSProject.Data", "CMSProject.Data\CMSProject.Data.csproj", "{3C8D787A-D799-4153-8A61-34038FD26A0B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{5AFF2FA4-7173-44F4-9FFF-AAA06DA08C73}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5AFF2FA4-7173-44F4-9FFF-AAA06DA08C73}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5AFF2FA4-7173-44F4-9FFF-AAA06DA08C73}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3C8D787A-D799-4153-8A61-34038FD26A0B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3C8D787A-D799-4153-8A61-34038FD26A0B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3C8D787A-D799-4153-8A61-34038FD26A0B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3C8D787A-D799-4153-8A61-34038FD26A0B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
