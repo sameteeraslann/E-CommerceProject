@@ -25,6 +25,13 @@ namespace CMSProject.Entity.Entities.Concrete
 
         public string Image { get; set; }
 
+        [Display(Name= "Category")]
+        [Range(1, int.MaxValue, ErrorMessage = "You must to choose a category")]
+        public int CategoryId { get; set; }
+        [ForeignKey("CategoryId")]
+        public virtual Category Category { get; set; }
+
+
         [NotMapped]
         [FileExtension]
         public IFormFile ImageUpload { get; set; }
