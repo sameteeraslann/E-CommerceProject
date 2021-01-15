@@ -1,5 +1,9 @@
+using CMSProject.Data.Context;
+using CMSProject.Data.Repositories.Concrete.EntityTypeRepositories;
+using CMSProject.Data.Repositories.Interfaces.EntityTypeRepositories;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -22,6 +26,16 @@ namespace CMSProject.Web
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            //Proje içerisinde; birbiri ile baðlantýlý olan sýnýflarýmý kendi içlerinde inject ediyorum müteakiben IOC container'a register etmek için startup.cs içerisinde bulunan ConfigureServices methodunun içerisine ekliyorum. IOC container'da bana baðýmlýlýklarý tersine çevirmeyi temin ediyor. Bu yöntem sýnýflarýmýn sýký sýkýya baðýmlýlýðýný ortadan kaldýrmak amacýyla yapýlmýþtýr.
+
+            services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+
+            services.AddScoped<IAppUserRepository, AppUserRepository>();
+            services.AddScoped<ICategoryRepository, CategoryRepository>();
+            services.AddScoped<IPageRepository, PageRepository>();
+            services.AddScoped<IProductRepository, ProductRepository>();
+
+
             services.AddControllersWithViews();
         }
 
