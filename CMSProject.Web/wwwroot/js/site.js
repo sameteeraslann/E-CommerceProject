@@ -2,3 +2,15 @@
 // for details on configuring this project to bundle and minify static web assets.
 
 // Write your JavaScript code.
+
+
+
+$(function () {
+    if ($("div.alert.notification")) {
+ 
+        setTimeout(() => {
+            $("div.alert.notification").fadeOut();
+        }, 2000);
+
+    }
+})

@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace CMSProject.Data.Migrations
 {
-    public partial class CMS : Migration
+    public partial class CmsAdd : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -58,6 +58,7 @@ namespace CMSProject.Data.Migrations
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Name = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
+                    Slug = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     CreateDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     UpdateDate = table.Column<DateTime>(type: "datetime2", nullable: true),
                     DeleteDate = table.Column<DateTime>(type: "datetime2", nullable: true),
@@ -226,10 +227,10 @@ namespace CMSProject.Data.Migrations
                 columns: new[] { "Id", "Content", "CreateDate", "DeleteDate", "Slug", "Sorting", "Status", "Title", "UpdateDate" },
                 values: new object[,]
                 {
-                    { 1, "Home Page", new DateTime(2021, 1, 15, 23, 13, 37, 814, DateTimeKind.Local).AddTicks(690), null, "home-page", 100, 1, "Home", null },
-                    { 2, "About Us Page", new DateTime(2021, 1, 15, 23, 13, 37, 821, DateTimeKind.Local).AddTicks(1043), null, "about-page", 100, 1, "About Us", null },
-                    { 3, "Services Page", new DateTime(2021, 1, 15, 23, 13, 37, 821, DateTimeKind.Local).AddTicks(1299), null, "service-page", 100, 1, "Services", null },
-                    { 4, "Conctact Us Page", new DateTime(2021, 1, 15, 23, 13, 37, 821, DateTimeKind.Local).AddTicks(1313), null, "contact-page", 100, 1, "Contact Us", null }
+                    { 1, "Home Page", new DateTime(2021, 1, 19, 18, 30, 47, 179, DateTimeKind.Local).AddTicks(9947), null, "home-page", 100, 1, "Home", null },
+                    { 2, "About Us Page", new DateTime(2021, 1, 19, 18, 30, 47, 182, DateTimeKind.Local).AddTicks(321), null, "about-page", 100, 1, "About Us", null },
+                    { 3, "Services Page", new DateTime(2021, 1, 19, 18, 30, 47, 182, DateTimeKind.Local).AddTicks(437), null, "service-page", 100, 1, "Services", null },
+                    { 4, "Conctact Us Page", new DateTime(2021, 1, 19, 18, 30, 47, 182, DateTimeKind.Local).AddTicks(442), null, "contact-page", 100, 1, "Contact Us", null }
                 });
 
             migrationBuilder.CreateIndex(

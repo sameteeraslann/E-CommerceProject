@@ -10,7 +10,7 @@ namespace CMSProject.Entity.Entities.Concrete
 {
     public class Page: IBaseEntity
     {
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+       
         public int Id { get; set; }
 
         [Required(ErrorMessage = "Must type a title")]

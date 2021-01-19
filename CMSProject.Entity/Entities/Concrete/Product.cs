@@ -11,7 +11,7 @@ namespace CMSProject.Entity.Entities.Concrete
 {
     public class Product:IBaseEntity
     {
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+       
         public int Id { get; set; }
 
         [Required, MinLength(2, ErrorMessage = "Mininum lenght is 2")]

@@ -10,7 +10,7 @@ namespace CMSProject.Entity.Entities.Concrete
 {
     public class Category:IBaseEntity
     {
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        
         public int Id { get; set; }
 
         [Required(ErrorMessage = "Must type a title")]
@@ -18,6 +18,7 @@ namespace CMSProject.Entity.Entities.Concrete
         [RegularExpression(@"^[a-zA-Z]+$", ErrorMessage = "Only allowed letters")]
        
         public string Name { get; set; }
+        public string Slug { get; set; }
 
         private DateTime _createDate = DateTime.Now;
         public DateTime CreateDate { get => _createDate; set => _createDate = value; }
@@ -27,6 +28,6 @@ namespace CMSProject.Entity.Entities.Concrete
         private Status _status = Status.Active;
         public Status Status { get => _status; set => _status = value; }
 
-        public List<Product> Products { get; set; }
+        public virtual List<Product> Products { get; set; }
     }
 }

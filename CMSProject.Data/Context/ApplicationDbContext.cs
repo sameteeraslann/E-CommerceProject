@@ -3,9 +3,6 @@ using CMSProject.Entity.Entities.Concrete;
 using CMSProject.Map.Mapping.Concrete;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace CMSProject.Data.Context
 {
@@ -28,6 +25,13 @@ namespace CMSProject.Data.Context
             builder.ApplyConfiguration(new SeedPage());
 
             base.OnModelCreating(builder);
+        }
+
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            optionsBuilder.UseLazyLoadingProxies(); // LAZY loading açmak için .Net Core da yapılır.
+
+            base.OnConfiguring(optionsBuilder);
         }
     }
 }

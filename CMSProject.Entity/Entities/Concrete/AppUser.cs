@@ -7,10 +7,9 @@ using System.Text;
 
 namespace CMSProject.Entity.Entities.Concrete
 {
-    public class AppUser : IdentityUser, IBaseEntity
+    public class AppUser : IdentityUser,IBaseEntity
     {
         //IdentityUser => Microsoft hazırladığı bir sınıftır. User ile ilgili işlemleri hızlı ve pratik olması açısından hazır bir yapıdır.
-
 
         public string Occupation { get; set; }
         // Occupation => IdentityUser sınıfının içermediği ama projede ihtiyaç duyulan özellikleri buradan eklenebilir.

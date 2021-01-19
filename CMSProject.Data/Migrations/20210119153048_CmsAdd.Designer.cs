@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CMSProject.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20210115201340_CMS")]
-    partial class CMS
+    [Migration("20210119153048_CmsAdd")]
+    partial class CmsAdd
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -120,6 +120,9 @@ namespace CMSProject.Data.Migrations
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)");
 
+                    b.Property<string>("Slug")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<int>("Status")
                         .HasColumnType("int");
 
@@ -173,7 +176,7 @@ namespace CMSProject.Data.Migrations
                         {
                             Id = 1,
                             Content = "Home Page",
-                            CreateDate = new DateTime(2021, 1, 15, 23, 13, 37, 814, DateTimeKind.Local).AddTicks(690),
+                            CreateDate = new DateTime(2021, 1, 19, 18, 30, 47, 179, DateTimeKind.Local).AddTicks(9947),
                             Slug = "home-page",
                             Sorting = 100,
                             Status = 1,
@@ -183,7 +186,7 @@ namespace CMSProject.Data.Migrations
                         {
                             Id = 2,
                             Content = "About Us Page",
-                            CreateDate = new DateTime(2021, 1, 15, 23, 13, 37, 821, DateTimeKind.Local).AddTicks(1043),
+                            CreateDate = new DateTime(2021, 1, 19, 18, 30, 47, 182, DateTimeKind.Local).AddTicks(321),
                             Slug = "about-page",
                             Sorting = 100,
                             Status = 1,
@@ -193,7 +196,7 @@ namespace CMSProject.Data.Migrations
                         {
                             Id = 3,
                             Content = "Services Page",
-                            CreateDate = new DateTime(2021, 1, 15, 23, 13, 37, 821, DateTimeKind.Local).AddTicks(1299),
+                            CreateDate = new DateTime(2021, 1, 19, 18, 30, 47, 182, DateTimeKind.Local).AddTicks(437),
                             Slug = "service-page",
                             Sorting = 100,
                             Status = 1,
@@ -203,7 +206,7 @@ namespace CMSProject.Data.Migrations
                         {
                             Id = 4,
                             Content = "Conctact Us Page",
-                            CreateDate = new DateTime(2021, 1, 15, 23, 13, 37, 821, DateTimeKind.Local).AddTicks(1313),
+                            CreateDate = new DateTime(2021, 1, 19, 18, 30, 47, 182, DateTimeKind.Local).AddTicks(442),
                             Slug = "contact-page",
                             Sorting = 100,
                             Status = 1,

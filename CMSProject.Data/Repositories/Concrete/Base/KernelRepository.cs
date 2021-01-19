@@ -33,7 +33,7 @@ namespace CMSProject.Data.Repositories.Concrete.Base
 
         // Asenkron programlama yaptığımızdan burada ki işlemlerimize "async" işaretlenir ve methodların gövdelerini de "await" olarak işaretlemek zorundayız.
 
-        public async Task<bool> Any(Expression<Func<T, bool>> expression)
+        public async Task<bool> Any(Expression<Func<T, bool>> expression = null)
         {
             return await _table.AnyAsync(expression);
         }
