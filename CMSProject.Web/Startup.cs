@@ -26,6 +26,8 @@ namespace CMSProject.Web
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddControllersWithViews();
+
             //Proje içerisinde; birbiri ile baðlantýlý olan sýnýflarýmý kendi içlerinde inject ediyorum müteakiben IOC container'a register etmek için startup.cs içerisinde bulunan ConfigureServices methodunun içerisine ekliyorum. IOC container'da bana baðýmlýlýklarý tersine çevirmeyi temin ediyor. Bu yöntem sýnýflarýmýn sýký sýkýya baðýmlýlýðýný ortadan kaldýrmak amacýyla yapýlmýþtýr.
 
             services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
@@ -36,7 +38,7 @@ namespace CMSProject.Web
             services.AddScoped<IProductRepository, ProductRepository>();
 
 
-            services.AddControllersWithViews();
+          
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
