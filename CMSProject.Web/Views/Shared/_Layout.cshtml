@@ -17,9 +17,9 @@
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
-                   <ul class="navbar-nav flex-grow-1">
-                       @await Component.InvokeAsync("MainMenu")
-                   </ul>
+                    <ul class="navbar-nav flex-grow-1">
+                        @await Component.InvokeAsync("MainMenu")
+                    </ul>
                 </div>
             </div>
         </nav>
@@ -29,18 +29,21 @@
             <div class="row">
                 <div class="col-3">
                     @await Component.InvokeAsync("Categories")
+
+                    <div class="smallcart bg-success mt-3 p-3 text-white">
+                        @await Component.InvokeAsync("SmallCart")
+                    </div>
                 </div>
                 <div class="col-9">
                     @RenderBody()
                 </div>
             </div>
-           
         </main>
     </div>
 
     <footer class="border-top footer text-muted">
         <div class="container">
-            &copy; 2021 - CMSProject.Web - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+            &copy; 2021 - YMS5177_CMS.Web - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
         </div>
     </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>

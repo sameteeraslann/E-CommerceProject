@@ -1,4 +1,5 @@
 ﻿using CMSProject.Data.Repositories.Interfaces.EntityTypeRepositories;
+using CMSProject.Entity.Entities.Concrete;
 using CMSProject.Entity.Enums;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -14,6 +15,12 @@ namespace CMSProject.Web.Models.Components
 
         public MainMenuViewComponent(IPageRepository pageRepository) => _pageRepo = pageRepository;
 
-        public async Task<IViewComponentResult> InvokeAsync() => View(await _pageRepo.Get(x => x.Status != Status.Passive));
+        public async Task<IViewComponentResult> InvokeAsync()
+        {
+            var pages = await GetPagesAsync();
+            return View(pages);
+        }
+
+        private async Task<List<Page>> GetPagesAsync() => await _pageRepo.Get(x => x.Status != Status.Passive);
     }
 }

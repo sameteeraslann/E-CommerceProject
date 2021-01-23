@@ -10,7 +10,7 @@
     @foreach (var item in Model)
     {
         <li class="list-group-item">
-            <a asp-area="" asp-controller="Product" asp-action="ProductByCategory" asp-route-slug="@item.Slug" class="nav-link text-dark">@item.Name</a>
+            <a class="nav-link text-dark" asp-area="" asp-controller="Product" asp-action="ProductByCategory" asp-route-categorySlug="@item.Slug">@item.Name</a>
         </li>
     }
 </ul>

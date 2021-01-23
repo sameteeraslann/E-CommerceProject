@@ -46,7 +46,7 @@ namespace CMSProject.Web.Areas.Admin.Controllers
                 string imageName = "noimage.png";
                 if (product.ImageUpload != null)
                 {
-                    string uploadDir = Path.Combine(_webHostEnvirenment.WebRootPath, "media/product");
+                    string uploadDir = Path.Combine(_webHostEnvirenment.WebRootPath, "media/products");
                     imageName = Guid.NewGuid().ToString() + "_" + product.ImageUpload.FileName;
                     string filePath = Path.Combine(uploadDir, imageName);
                     FileStream fileStream = new FileStream(filePath, FileMode.Create);
